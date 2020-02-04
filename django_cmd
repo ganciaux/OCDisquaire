@@ -1,0 +1,56 @@
+mkdir project_name
+cd project_name
+
+virtualenv env -p python3
+. env/bin/activate
+deactivate
+
+pip install django
+python -m django --version
+
+django-admin startproject project_name
+
+pip install psycopg2
+
+createdb -O ganciaux database_project
+
+project/settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
+        'NAME': 'database_project', # le nom de notre base de donnees creee precedemment
+        'USER': 'ganciaux', # attention : remplacez par votre nom d'utilisateur
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5432',
+    }
+}
+
+#installation application
+pip install django-debug-toolbar
+
+#creation d'une application
+django-admin startapp store
+
+#migrations
+./manage.py showmigrations
+./manage.py makemigrations
+./manage.py migrate
+
+
+#postgres
+\dt
+\d
+
+
+#./manage.py shell
+from store.models import Artist, Album
+
+ar = Artist(name="Artiste 1"); ar.save();
+Artist.objects.create(name="Artiste 16")
+Artist.objects.all() 
+Artist.objects.filter(name="Artiste 1")
+Album.objects.create(name="album 9")
+
+#./manage.py createsuperuser
