@@ -54,3 +54,20 @@ Artist.objects.filter(name="Artiste 1")
 Album.objects.create(name="album 9")
 
 #./manage.py createsuperuser
+
+#test:
+1)
+python -m doctest file.py
+"""
+>>> agent = Agent(30)
+>>> agent.position
+30
+"""
+
+2)pytest 
+arg -s avec les print
+
+avant def setup_method(self):
+après def setup_method(self):
+
+pytest --cov=program --cov-report html test_*.py
