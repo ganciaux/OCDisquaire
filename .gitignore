@@ -3,3 +3,7 @@ disquaire_project/disquaire_project/__pycache__
 disquaire_project/store/__pycache__/
 disquaire_project/store/management/
 disquaire_project/store/migrations/__pycache__/
+
+disquaire_project/__pycache__
+store/__pycache__/
+store/migrations/__pycache__/
